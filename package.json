@@ -1,0 +1,13 @@
+{
+  "name": "telemedicina",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npx wrangler dev",
+    "build:frontend": "cd frontend && npm run build",
+    "deploy:backend": "cd backend && npx wrangler deploy",
+    "db:migrate": "cd backend && npx wrangler d1 execute telemedicina-db --local --file=./db/migrations/0001_initial_schema.sql",
+    "db:seed": "cd backend && npx wrangler d1 execute telemedicina-db --local --file=./db/seed.sql",
+    "install:all": "npm install --prefix backend && npm install --prefix frontend"
+  }
+}
